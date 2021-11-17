@@ -85,9 +85,21 @@ public class ChatBot {
         String[] splitString;
         System.out.println("Please type in your queries.  Enter quit to exit.");
         Organisation currentEntity = null;
+        boolean basicQuestionsFlag = false;
         while (true) {
+            basicQuestionsFlag = false;
             userInput = scanner.nextLine();
             userInput = userInput.toLowerCase();
+            for(String basic : basicQuestions.keySet()) {
+                if(userInput.contains(basic)) {
+                    System.out.println(basicQuestions.get(basic));
+                    basicQuestionsFlag = true;
+                }
+            }
+            if(basicQuestionsFlag == true) {
+                currentEntity = null;
+                continue;
+            }
             splitString = userInput.split(" ");
             for(String s : splitString) {
                 if(s.contains("nft")) {
@@ -129,12 +141,6 @@ public class ChatBot {
                         System.out.println("Sorry, I do not have any information on that.");
                         break;
                     }
-                }
-                //check if matches basic question criteria
-                if(basicQuestions.containsKey(s)) {
-                    System.out.println(basicQuestions.get(s));
-                    currentEntity = null;
-                    break;
                 }
                 System.out.println("Sorry, I didn't get that. Please try again.");
             }
