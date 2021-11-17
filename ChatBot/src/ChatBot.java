@@ -24,7 +24,7 @@ public class ChatBot {
         // add financial events
         events.add("acquisitions");
         events.add("roi");
-        events.add("Q4");
+        events.add("q4");
         events.add("revenue");
         events.add("profits");
         events.add("risk");
@@ -44,14 +44,14 @@ public class ChatBot {
         organisation.addEvent("roi", "TCS shares have given a 5.2% Return on Investment (ROI) in the past year.");
         organisation.addEvent("revenue", "TCS revenue stands at 28 Billion US$");
         organisation.addEvent("profits", "TCS profits stands at 4.3 Billion US$");
-        organisation.addEvent("Q4", "TCS Q4 data has been very encouraging. \n They have reported over 21% rise in profits.");
+        organisation.addEvent("q4", "TCS Q4 data has been very encouraging. \n They have reported over 21% rise in profits.");
         Stocks.put("tcs", organisation);
 
         organisation = new Organisation("Wipro");
         organisation.addEvent("roi", "Wipro shares have given a 8.6% Return on Investment (ROI) in the past year.");
         organisation.addEvent("revenue", "Wipro revenue stands at 43 Billion US$");
         organisation.addEvent("profits", "Wipro profits stands at 11 Billion US$");
-        organisation.addEvent("Q4", "Wipro Q4 data has been extremely encouraging. \n They have reported over 262% rise in profits.");
+        organisation.addEvent("q4", "Wipro Q4 data has been extremely encouraging. \n They have reported over 262% rise in profits.");
         Stocks.put("wipro", organisation);
 
 
@@ -136,6 +136,7 @@ public class ChatBot {
                     currentEntity = null;
                     break;
                 }
+                System.out.println("Sorry, I didn't get that. Please try again.");
             }
             if(splitString[0].equals("quit")) {
                 System.out.println("Thank you. Goodbye.");
